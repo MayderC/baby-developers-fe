@@ -1,20 +1,14 @@
-import { useState } from 'react'
-import { Routes, Route, Link } from "react-router-dom";
-import HomePage from './views/Landing/Home';
-
+import { useState } from "react";
+import { Outlet } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <div className="App">
-
-      <Routes>
-        <Route path="/" element={<HomePage></HomePage>} />
-      </Routes>
-
+    <div className="min-h-screen App bg-oscurito">
+      <Outlet></Outlet>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
