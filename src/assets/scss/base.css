@@ -27,8 +27,7 @@
     position: absolute;
     width: 254.72px;
     height: 254.72px;
-    right : -100px;
-    bottom: -100px;
+
 
     background: radial-gradient(79.91% 79.91% at 74.58% 16.62%, #E46BBB 0%, #EB78BD 29.89%, #B72EB2 73.63%, #81249A 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
     transform: rotate(-0.14deg);

@@ -30,9 +30,10 @@ function HomePage() {
           </div>
         </div>
       </div>
-      <div className="circulito absolute z-0 rounded-full"></div>
+      <div className="circulito absolute z-0 right-[-100px] bottom-[-100px] rounded-full"></div>
+      <div className="circulito absolute z-0 left-[-100px] top-[-100px] rounded-full"></div>
       <svg
-        className="absolute z-0 top-[-130px] left-[-100px]"
+        className="absolute hidden z-0 top-[-130px] left-[-100px]"
         height="400"
         width="400"
         xmlns="http://www.w3.org/2000/svg"
