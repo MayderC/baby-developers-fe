@@ -1,6 +1,9 @@
+interface IRoles {
+  name: string
+}
 export interface IUserRegister {
-  username: string;
+  fullName: string;
   email: string;
   password: string;
-  role?: string;
+  roles?: IRoles[];
 }

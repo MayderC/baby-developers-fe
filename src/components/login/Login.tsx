@@ -3,7 +3,7 @@ import BabyButton from "../BabyButton/BabyButton";
 import { auth } from "./../../Api/auth/Auth";
 
 export interface IUserLogin {
-  username: string;
+  email: string;
   password: string;
 }
 
@@ -11,7 +11,7 @@ function Login() {
   const [canHiddePass, setCanHiddePass] = useState<boolean>(false);
   const [user, setUser] = useState<IUserLogin>({
     password: "",
-    username: "",
+    email: "",
   });
 
   const handleLogin = (user: IUserLogin) => {
@@ -28,8 +28,8 @@ function Login() {
           id="inline-full-name"
           type="text"
           autoFocus
-          onChange={(e) => setUser({ ...user, username: e.target.value })}
-          placeholder="Username"
+          onChange={(e) => setUser({ ...user, email: e.target.value })}
+          placeholder="Email"
         />
       </div>
       <div className="md:flex md:items-center mb-6">

@@ -27,8 +27,8 @@ export const FormRegister = ({ setRole, role }: IProps) => {
               id="inline-full-name"
               type="text"
               autoFocus
-              placeholder="Username"
-              onChange={(e) => setForm({ ...form, username: e.target.value })}
+              placeholder="Full name"
+              onChange={(e) => setForm({ ...form, fullName: e.target.value })}
             />
           </div>
           <div className="md:flex md:items-center mb-6">

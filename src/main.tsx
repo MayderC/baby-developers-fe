@@ -4,7 +4,7 @@ import App from './App'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './assets/scss/base.css'
 import './assets/scss/index.scss'
-import HomePage from './views/Landing/Home';
+import LandingPage from './views/Landing/Landing';
 import { RegisterUser } from './views/RegisterUser/RegisterUser';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />}>
-          <Route index element={<HomePage></HomePage>}></Route>
+          <Route index element={<LandingPage></LandingPage>}></Route>
           <Route path='/register' element={<RegisterUser></RegisterUser>}></Route>
         </Route>
       </Routes>  

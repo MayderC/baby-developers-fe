@@ -6,19 +6,21 @@ export default (role: string) => {
   const [canHiddePass, setCanHiddePass] = useState<boolean>(true);
 
   const [form, setForm] = useState<IUserRegister>({
-    username: "",
+    fullName: "",
     email: "",
     password: "",
-    role: role,
+    roles: [{
+      name: role
+    }],
   });
 
   const handleRegister = () => {
     auth.register({
-      username: form.username,
+      fullName: form.fullName,
       password: form.password,
       email: form.email,
-      role: form.role,
-    });
+      roles: form.roles,
+    }).then(console.log);
   };
 
   return { handleRegister, form, setForm, canHiddePass, setCanHiddePass };

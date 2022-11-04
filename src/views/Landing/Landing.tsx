@@ -1,5 +1,5 @@
 import Login from "../../components/login/Login";
-import BabyButton from "./../../components/BabyButton/BabyButton";
+import BabyButton from "../../components/BabyButton/BabyButton";
 import { useNavigate } from "react-router-dom";
 
 function HomePage() {
