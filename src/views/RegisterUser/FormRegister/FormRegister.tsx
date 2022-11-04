@@ -1,38 +1,22 @@
-import { useState } from "react";
 import BabyButton from "../../../components/BabyButton/BabyButton";
-import { IUserRegister } from "./../Register.interfaces";
 import back from "./../../../assets/img/back.png";
 import { IT_RECRUITER } from "./../../../common/constants/index";
-import { auth } from "../../../Api/auth/Auth";
+
+import useFormRegister from "./useFormRegister";
 
 interface IProps {
   setRole: Function;
-  role?: string;
+  role: string;
 }
 
 export const FormRegister = ({ setRole, role }: IProps) => {
-  const [canHiddePass, setCanHiddePass] = useState<boolean>(true);
-
-  const [form, setForm] = useState<IUserRegister>({
-    username: "",
-    email: "",
-    password: "",
-    role: role,
-  });
-
-  const handleRegister = () => {
-    auth.register({
-      username: form.username,
-      password: form.password,
-      email: form.email,
-      role: form.role,
-    });
-  };
+  const { form, setForm, handleRegister, canHiddePass, setCanHiddePass } =
+    useFormRegister(role);
 
   return (
     <>
       <div className="form-register">
-        <h2 className="text-white text-center font-semibold">
+        <h2 className="text-white text-center text-3xl font-semibold">
           {role == IT_RECRUITER ? "Recruiter" : "Developer"}
         </h2>
         <form className="bg-white relative shadow-2xl rounded-card p-6 mt-6">
@@ -43,8 +27,8 @@ export const FormRegister = ({ setRole, role }: IProps) => {
               id="inline-full-name"
               type="text"
               autoFocus
-              placeholder="Username"
-              onChange={(e) => setForm({ ...form, username: e.target.value })}
+              placeholder="Full name"
+              onChange={(e) => setForm({ ...form, fullName: e.target.value })}
             />
           </div>
           <div className="md:flex md:items-center mb-6">

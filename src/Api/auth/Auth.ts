@@ -9,6 +9,7 @@ class Auth {
   }
 
   async register(request: IUserRegister) {
+    console.log(request)
     const user = { user: request };
     return http.post(this._path + "/register", user);
   }
