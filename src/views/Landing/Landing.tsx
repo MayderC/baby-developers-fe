@@ -2,7 +2,7 @@ import Login from "../../components/login/Login";
 import BabyButton from "../../components/BabyButton/BabyButton";
 import { useNavigate } from "react-router-dom";
 
-function HomePage() {
+function Landing() {
   let navigate = useNavigate();
 
   return (
@@ -50,4 +50,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default Landing;
