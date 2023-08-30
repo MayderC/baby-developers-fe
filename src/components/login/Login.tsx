@@ -1,9 +1,12 @@
 import { useState } from "react";
 import BabyButton from "../BabyButton/BabyButton";
 import { auth } from "./../../Api/auth/Auth";
+import { useDispatch, useSelector } from "react-redux/es/exports";
+import { setToken } from "../../features/auth/authSlice";
+import { useNavigate } from "react-router-dom";
 
 export interface IUserLogin {
-  username: string;
+  email: string;
   password: string;
 }
 
@@ -11,11 +14,17 @@ function Login() {
   const [canHiddePass, setCanHiddePass] = useState<boolean>(false);
   const [user, setUser] = useState<IUserLogin>({
     password: "",
-    username: "",
+    email: "",
   });
+  let navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const handleLogin = (user: IUserLogin) => {
-    auth.login(user);
+  const handleLogin = async (user: IUserLogin) => {
+    try {
+      const res = await auth.login(user);
+      dispatch(setToken(res));
+      navigate("/home");
+    } catch (error) {}
   };
 
   return (
@@ -28,7 +37,7 @@ function Login() {
           id="inline-full-name"
           type="text"
           autoFocus
-          onChange={(e) => setUser({ ...user, username: e.target.value })}
+          onChange={(e) => setUser({ ...user, email: e.target.value })}
           placeholder="Username"
         />
       </div>

@@ -18,7 +18,7 @@ class Htpp {
 
   setInterceptorsRequest() {
     this.client.interceptors.request.use((config) => {
-      if (config.url?.split("/")[1] !== "auth") console.log("set toke");
+      if (config.url?.split("/")[1] !== "auth") console.log("set token");
 
       return config;
     });
